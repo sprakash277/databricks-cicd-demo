@@ -14,7 +14,7 @@ node {
   def TESTRESULTPATH  = "${BUILDPATH}/Validation/reports/junit"
   def WORKSPACEPATH   = "/Shared/<path>"
   def DBFSPATH        = "dbfs:/FileStore/sumit_data"
-  def CLUSTERID       = "sumit_8.1"
+  def CLUSTERID       = "1005-000403-river640"
   def CONDAPATH       = "/Users/sumit.prakash/opt/anaconda3/>"
   def CONDAENV        = "cicddemo"
 
