@@ -4,7 +4,7 @@ node {
   def GITREPOREMOTE   = "https://github.com/sprakash277/databricks-cicd-demo.git"
   def GITHUBCREDID    = "<github-token>"
   def CURRENTRELEASE  = "Master"
-  def DBTOKEN         = "dapi38e1aaba472af172c173b0b1a9ac396b"
+  def DBTOKEN         = "sumit-databricks-cicd-secret"
   def DBURL           = "https://e2-demo-field-eng.cloud.databricks.com/"
   def SCRIPTPATH      = "${GITREPO}/Automation/Deployments"
   def NOTEBOOKPATH    = "${GITREPO}/Workspace"
@@ -39,6 +39,11 @@ node {
             15001" | databricks-connect configure
            """
       }
+  }
+  
+  stage('Checkout') { // for display purposes
+    echo "Pulling ${CURRENTRELEASE} Branch from Github"
+    git branch: CURRENTRELEASE, credentialsId: GITHUBCREDID, url: GITREPOREMOTE
   }
 
   stage('Run Unit Tests') {
