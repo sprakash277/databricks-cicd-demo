@@ -12,7 +12,7 @@ node {
   def BUILDPATH       = "${GITREPO}/Builds/${env.JOB_NAME}-${env.BUILD_NUMBER}"
   def OUTFILEPATH     = "${BUILDPATH}/Validation/Output"
   def TESTRESULTPATH  = "${BUILDPATH}/Validation/reports/junit"
-  def WORKSPACEPATH   = "/Shared/<path>"
+  def WORKSPACEPATH   = "/Shared/sumit_cicd"
   def DBFSPATH        = "dbfs:/FileStore/sumit_data"
   def CLUSTERID       = "1005-013716-rides802"
   def CONDAPATH       = "/Users/sumit.prakash/opt/anaconda3/"
