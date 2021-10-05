@@ -1,6 +1,6 @@
 // Jenkinsfile
 node {
-  def GITREPO         = "/Users/sumit.prakash/.jenkins/${env.JOB_NAME}"
+  def GITREPO         = "/Users/sumit.prakash/.jenkins/workspace/${env.JOB_NAME}"
   def GITREPOREMOTE   = "https://github.com/sprakash277/databricks-cicd-demo.git"
   def GITHUBCREDID    = "<github-token>"
   def CURRENTRELEASE  = "Master"
