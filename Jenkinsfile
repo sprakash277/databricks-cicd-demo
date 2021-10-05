@@ -15,8 +15,8 @@ node {
   def WORKSPACEPATH   = "/Shared/<path>"
   def DBFSPATH        = "dbfs:/FileStore/sumit_data"
   def CLUSTERID       = "1005-000403-river640"
-  def CONDAPATH       = "/Users/sumit.prakash/opt/anaconda3/>"
-  def CONDAENV        = "cicddemo"
+  def CONDAPATH       = "/Users/sumit.prakash/opt/anaconda3/"
+  def CONDAENV        = "base"
 
   stage('Setup') {
       withCredentials([string(credentialsId: DBTOKEN, variable: 'TOKEN')]) {
