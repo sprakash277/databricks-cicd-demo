@@ -79,7 +79,7 @@ node {
           mkdir -p ${BUILDPATH}/Libraries/python
           mkdir -p ${BUILDPATH}/Validation/Output
           #Get modified files
-          git diff --name-only --diff-filter=AMR HEAD^1 HEAD | xargs -I '{}' cp --parents  -R '{}' ${BUILDPATH}
+          git diff --name-only --diff-filter=AMR HEAD^1 HEAD | xargs -I '{}' rsync -R '{}' ${BUILDPATH}
 
           # Get packaged libs
           find ${LIBRARYPATH} -name '*.whl' | xargs -I '{}' cp  '{}' ${BUILDPATH}/Libraries/python/
