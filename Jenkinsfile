@@ -1,11 +1,11 @@
 // Jenkinsfile
 node {
   def GITREPO         = "/var/lib/jenkins/workspace/${env.JOB_NAME}"
-  def GITREPOREMOTE   = "https://github.com/<repo>"
+  def GITREPOREMOTE   = "https://github.com/sprakash277/databricks-cicd-demo.git"
   def GITHUBCREDID    = "<github-token>"
-  def CURRENTRELEASE  = "<release>"
-  def DBTOKEN         = "<databricks-token>"
-  def DBURL           = "https://<databricks-instance>"
+  def CURRENTRELEASE  = "Master"
+  def DBTOKEN         = "dapi20f4611103048f0befc381cc9f396abd"
+  def DBURL           = "https://e2-demo-field-eng.cloud.databricks.com/"
   def SCRIPTPATH      = "${GITREPO}/Automation/Deployments"
   def NOTEBOOKPATH    = "${GITREPO}/Workspace"
   def LIBRARYPATH     = "${GITREPO}/Libraries"
@@ -13,10 +13,10 @@ node {
   def OUTFILEPATH     = "${BUILDPATH}/Validation/Output"
   def TESTRESULTPATH  = "${BUILDPATH}/Validation/reports/junit"
   def WORKSPACEPATH   = "/Shared/<path>"
-  def DBFSPATH        = "dbfs:<dbfs-path>"
-  def CLUSTERID       = "<cluster-id>"
-  def CONDAPATH       = "<conda-path>"
-  def CONDAENV        = "<conda-env>"
+  def DBFSPATH        = "dbfs:/FileStore/sumit_data"
+  def CLUSTERID       = "sumit_8.1"
+  def CONDAPATH       = "/Users/sumit.prakash/opt/anaconda3/>"
+  def CONDAENV        = "cicddemo"
 
   stage('Setup') {
       withCredentials([string(credentialsId: DBTOKEN, variable: 'TOKEN')]) {
