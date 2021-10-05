@@ -79,10 +79,10 @@ node {
           mkdir -p ${BUILDPATH}/Libraries/python
           mkdir -p ${BUILDPATH}/Validation/Output
           #Get modified files
-          git diff --name-only --diff-filter=AMR HEAD^1 HEAD | xargs -I '{}' cp --parents -r '{}' ${BUILDPATH}
+          git diff --name-only --diff-filter=AMR HEAD^1 HEAD | xargs -I '{}' cp -p --parents  -r '{}' ${BUILDPATH}
 
           # Get packaged libs
-          find ${LIBRARYPATH} -name '*.whl' | xargs -I '{}' cp '{}' ${BUILDPATH}/Libraries/python/
+          find ${LIBRARYPATH} -name '*.whl' | xargs -I '{}' cp -p '{}' ${BUILDPATH}/Libraries/python/
 
           # Generate artifact
           tar -czvf Builds/latest_build.tar.gz ${BUILDPATH}
