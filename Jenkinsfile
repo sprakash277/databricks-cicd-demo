@@ -40,10 +40,7 @@ node {
            """
       }
   }
-  stage('Checkout') { // for display purposes
-    echo "Pulling ${CURRENTRELEASE} Branch from Github"
-    git branch: CURRENTRELEASE, credentialsId: GITHUBCREDID, url: GITREPOREMOTE
-  }
+
   stage('Run Unit Tests') {
     try {
         sh """#!/bin/bash
