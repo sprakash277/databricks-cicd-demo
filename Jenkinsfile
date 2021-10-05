@@ -14,7 +14,7 @@ node {
   def TESTRESULTPATH  = "${BUILDPATH}/Validation/reports/junit"
   def WORKSPACEPATH   = "/Shared/<path>"
   def DBFSPATH        = "dbfs:/FileStore/sumit_data"
-  def CLUSTERID       = "1005-000403-river640"
+  def CLUSTERID       = "1005-013716-rides802"
   def CONDAPATH       = "/Users/sumit.prakash/opt/anaconda3/"
   def CONDAENV        = "base"
 
@@ -54,7 +54,7 @@ node {
               source ${CONDAPATH}/bin/activate ${CONDAENV}
 
               # Python tests for libs
-              python3 -m pytest --junit-xml=${TESTRESULTPATH}/TEST-libout.xml ${LIBRARYPATH}/python/dbxdemo/test*.py || true
+              python3 -m pytest --junit-xml=${TESTRESULTPATH}/TEST-libout.xml ${LIBRARYPATH}/python/databricks-cicd-demo/test*.py || true
            """
     } catch(err) {
       step([$class: 'JUnitResultArchiver', testResults: '--junit-xml=${TESTRESULTPATH}/TEST-*.xml'])
