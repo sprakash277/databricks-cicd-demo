@@ -4,7 +4,7 @@ node {
   def GITREPOREMOTE   = "https://github.com/sprakash277/databricks-cicd-demo.git"
   def GITHUBCREDID    = "<github-token>"
   def CURRENTRELEASE  = "Master"
-  def DBTOKEN         = "dapi20f4611103048f0befc381cc9f396abd"
+  def DBTOKEN         = "dapi38e1aaba472af172c173b0b1a9ac396b"
   def DBURL           = "https://e2-demo-field-eng.cloud.databricks.com/"
   def SCRIPTPATH      = "${GITREPO}/Automation/Deployments"
   def NOTEBOOKPATH    = "${GITREPO}/Workspace"
