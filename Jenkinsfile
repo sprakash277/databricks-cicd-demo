@@ -22,13 +22,16 @@ node {
       withCredentials([string(credentialsId: DBTOKEN, variable: 'TOKEN')]) {
         sh """#!/bin/bash
             # Configure Conda environment for deployment & testing
+            echo "Running Conda"
             source ${CONDAPATH}/bin/activate ${CONDAENV}
 
+			echo "Running Configure"
             # Configure Databricks CLI for deployment
             echo "${DBURL}
             $TOKEN" | databricks configure --token
 
             # Configure Databricks Connect for testing
+            echo "Running Connect"
             echo "${DBURL}
             $TOKEN
             ${CLUSTERID}
