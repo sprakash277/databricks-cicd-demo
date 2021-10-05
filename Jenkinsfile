@@ -54,8 +54,8 @@ node {
               source ${CONDAPATH}/bin/activate ${CONDAENV}
 
               # Python tests for libs
-              python3 -m pytest --junit-xml=${TESTRESULTPATH}/TEST-libout.xml ${LIBRARYPATH}/python/dbxdemo/test*.py || true
-           """
+              python3 -m pytest --junit-xml=${TESTRESULTPATH}/TEST-libout.xml ${LIBRARYPATH}/python/dbxdemo/test*.py|| true
+           """ 
     } catch(err) {
       step([$class: 'JUnitResultArchiver', testResults: '--junit-xml=${TESTRESULTPATH}/TEST-*.xml'])
       if (currentBuild.result == 'UNSTABLE')
